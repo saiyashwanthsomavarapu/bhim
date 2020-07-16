@@ -53,10 +53,10 @@ public class BhimUpi extends CordovaPlugin {
         //     callbackContext.error("Expected one non-empty string argument.");
         // }
         String app;
-        if(args.getJSONObject(0).get("app") == null) {
+        if(args.getJSONObject(0).getString("app") == null) {
             app = "in.org.npci.upiapp";
         } else {
-            app =  args.getJSONObject(0).get("app");
+            app =  args.getJSONObject(0).getString("app");
         }
         String receiverUpiId = args.getJSONObject(0).get("receiverUpId");
         String receiverName = args.getJSONObject(0).get("receiverName");
