@@ -53,13 +53,13 @@ public class BhimUpi extends CordovaPlugin {
         //     callbackContext.error("Expected one non-empty string argument.");
         // }
         String app;
-        if(args.getJSONObject(0).get('app') == null) {
-            app = 'in.org.npci.upiapp';
+        if(args.getJSONObject(0).get("app") == null) {
+            app = "in.org.npci.upiapp";
         } else {
-            app =  args.getJSONObject(0).get('app');
+            app =  args.getJSONObject(0).get("app");
         }
-        String receiverUpiId = args.getJSONObject(0).get('receiverUpId');
-        String receiverName = args.getJSONObject(0).get('receiverName');
+        String receiverUpiId = args.getJSONObject(0).get("receiverUpId");
+        String receiverName = args.getJSONObject(0).get("receiverName");
         String transactionRefId = args.getJSONObject(0).get("transactionRefId");
         String transactionNote = args.getJSONObject(0).get("transactionNote");
         String amount = args.getJSONObject(0).get("amount");
@@ -146,10 +146,10 @@ public class BhimUpi extends CordovaPlugin {
         Uri.Builder uriBuilder = new Uri.Builder();
         uriBuilder.scheme("upi").authority("pay");
         uriBuilder.appendQueryParameter("pa","test@ybl");
-        uriBuilder.appendQueryParameter('pn',"Test");
-        uriBuilder.appendQueryParameter('tn',"Get All Apps");
-        uriBuilder.appendQueryParameter('am','1.0');
-        uriBuilder.appendQueryParameter('cr',"INR");
+        uriBuilder.appendQueryParameter("pn","Test");
+        uriBuilder.appendQueryParameter("tn","Get All Apps");
+        uriBuilder.appendQueryParameter("am","1.0");
+        uriBuilder.appendQueryParameter("cr","INR");
         Uri uri = uriBuilder.build();
         intent.setData(uri);
         PackageManager pm = activity.getPackageManager();
@@ -161,7 +161,7 @@ public class BhimUpi extends CordovaPlugin {
 
                 String packageName = resolveInfo.activityInfo.packageName;
                 
-                String name = (string) pm.getApplicationLabel(pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA))
+                String name = (string) pm.getApplicationLabel(pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
 
                 Drawable dIcon = pm.getApplicationIcon(packageName);
 
@@ -175,7 +175,7 @@ public class BhimUpi extends CordovaPlugin {
                 Map<String,Object> m = new HashMap<>();
                 m.put("packageName", packageName);
                 m.put("name",name);
-                m.put('icon',icon);
+                m.put("icon",icon);
 
                 packages.add(m);
             } catch(Exception e) {
