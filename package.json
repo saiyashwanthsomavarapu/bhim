@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-bhim_upi",
+  "version": "0.1.0",
+  "description": "BhimUpi connection",
+  "cordova": {
+    "id": "cordova-plugin-bhim_upi",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Sai Yaswanth Somavarapu",
+  "license": "ISC"
+}
