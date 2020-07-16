@@ -58,14 +58,14 @@ public class BhimUpi extends CordovaPlugin {
         } else {
             app =  args.getJSONObject(0).getString("app");
         }
-        String receiverUpiId = args.getJSONObject(0).get("receiverUpId");
-        String receiverName = args.getJSONObject(0).get("receiverName");
-        String transactionRefId = args.getJSONObject(0).get("transactionRefId");
-        String transactionNote = args.getJSONObject(0).get("transactionNote");
-        String amount = args.getJSONObject(0).get("amount");
-        String currency = args.getJSONObject(0).get("currency");
-        String url = args.getJSONObject(0).get("url");
-        String merchantId = args.getJSONObject(0).get("merchantId");
+        String receiverUpiId = args.getJSONObject(0).getString("receiverUpId");
+        String receiverName = args.getJSONObject(0).getString("receiverName");
+        String transactionRefId = args.getJSONObject(0).getString("transactionRefId");
+        String transactionNote = args.getJSONObject(0).getString("transactionNote");
+        String amount = args.getJSONObject(0).getString("amount");
+        String currency = args.getJSONObject(0).getString("currency");
+        String url = args.getJSONObject(0).getString("url");
+        String merchantId = args.getJSONObject(0).getString("merchantId");
 
         try {
             exception = false;
