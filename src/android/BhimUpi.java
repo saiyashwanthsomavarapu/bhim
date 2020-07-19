@@ -186,7 +186,7 @@ import org.json.JSONObject;
     }
 
     private Bitmap getBitmapFromDrawable(Drawable drawable) {
-        Bitmap bmp = Bitmap.createBitmap(drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_888);
+        Bitmap bmp = Bitmap.createBitmap(drawable.getIntrinsicWidth(),drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bmp);
         drawable.setBounds(0,0, canvas.getWidth(), canvas.getHeight());
         drawable.draw(canvas);
