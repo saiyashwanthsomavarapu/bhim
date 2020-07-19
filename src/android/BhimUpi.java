@@ -35,7 +35,7 @@ public class BhimUpi extends CordovaPlugin {
     private CallbackContext finalResult;
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        finalResult = callbackContext;
+        // finalResult = callbackContext;
         if (action.equals("coolMethod")) {
             // String message = args.getString(0);
             this.startTranascation(args, callbackContext);
@@ -98,7 +98,7 @@ public class BhimUpi extends CordovaPlugin {
 
             if (isAppInstalled(app)) {
                 activity.startActivityForResult(intent, uniqueRequestCode);
-                finalResult = result;
+                // finalResult = result;
             } else {
                 Log.d("BhimUpi NOTE: ", app + " not installed on the device.");
                 callbackContext.success("app_not_installed");
@@ -106,7 +106,7 @@ public class BhimUpi extends CordovaPlugin {
         } catch (Exception ex) {
             exception = true;
             Log.d("BhimUpi NOTE: ", "" + ex);
-            callbackContext.error("FAILED", "invalid_parameters", null);
+            callbackContext.success("FAILED", "invalid_parameters", null);
         }
     }
 
