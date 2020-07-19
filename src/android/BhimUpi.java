@@ -111,23 +111,23 @@ public class BhimUpi extends CordovaPlugin {
     }
 
         // On receiving the response.
-        @Override
-        public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
-            if (uniqueRequestCode == requestCode && finalResult != null) {
-                if (data != null) {
-                    try {
-                        String response = data.getStringExtra("response");
-                        // if (!exception) finalResult.success(response);
-                    } catch (Exception ex) {
-                        // if (!exception) finalResult.success("null_response");
-                    }
-                } else {
-                    Log.d("BhimUpi NOTE: ", "Received NULL, User cancelled the transaction.");
-                    // if (!exception) finalResult.success("user_canceled");
-                }
-            }
-            return true;
-        }
+    
+        // public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+        //     if (uniqueRequestCode == requestCode && finalResult != null) {
+        //         if (data != null) {
+        //             try {
+        //                 String response = data.getStringExtra("response");
+        //                 // if (!exception) finalResult.success(response);
+        //             } catch (Exception ex) {
+        //                 // if (!exception) finalResult.success("null_response");
+        //             }
+        //         } else {
+        //             Log.d("BhimUpi NOTE: ", "Received NULL, User cancelled the transaction.");
+        //             // if (!exception) finalResult.success("user_canceled");
+        //         }
+        //     }
+        //     return true;
+        // }
     private boolean isAppInstalled(String uri) {
         PackageManager pm = activity.getPackageManager();
         try {
