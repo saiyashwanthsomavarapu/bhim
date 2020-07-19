@@ -106,7 +106,7 @@ public class BhimUpi extends CordovaPlugin {
         } catch (Exception ex) {
             exception = true;
             Log.d("BhimUpi NOTE: ", "" + ex);
-            callbackContext.success("FAILED", "invalid_parameters", null);
+            // callbackContext.error("FAILED", "invalid_parameters", null);
         }
     }
 
@@ -117,13 +117,13 @@ public class BhimUpi extends CordovaPlugin {
                 if (data != null) {
                     try {
                         String response = data.getStringExtra("response");
-                        if (!exception) finalResult.success(response);
+                        // if (!exception) finalResult.success(response);
                     } catch (Exception ex) {
-                        if (!exception) finalResult.success("null_response");
+                        // if (!exception) finalResult.success("null_response");
                     }
                 } else {
                     Log.d("BhimUpi NOTE: ", "Received NULL, User cancelled the transaction.");
-                    if (!exception) finalResult.success("user_canceled");
+                    // if (!exception) finalResult.success("user_canceled");
                 }
             }
             return true;
@@ -161,7 +161,7 @@ public class BhimUpi extends CordovaPlugin {
 
                 String packageName = resolveInfo.activityInfo.packageName;
                 
-                String name = (string) pm.getApplicationLabel(pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
+                String name = pm.getApplicationLabel(pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
 
                 Drawable dIcon = pm.getApplicationIcon(packageName);
 
