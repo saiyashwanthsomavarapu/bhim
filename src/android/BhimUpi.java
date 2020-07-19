@@ -27,7 +27,7 @@ import org.json.JSONObject;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class BhimUpi extends CordovaPlugin {
+ public class BhimUpi extends CordovaPlugin {
 
     private int uniqueRequestCode = 5120;
     private Activity activity;
@@ -161,7 +161,7 @@ public class BhimUpi extends CordovaPlugin {
 
                 String packageName = resolveInfo.activityInfo.packageName;
                 
-                String name = pm.getApplicationLabel(pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
+                String name = String.valueOf(pm.getApplicationLabel(pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA)));
 
                 Drawable dIcon = pm.getApplicationIcon(packageName);
 
